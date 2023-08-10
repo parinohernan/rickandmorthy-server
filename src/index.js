@@ -1,25 +1,9 @@
 const http = require("http");
 
+const { conn } = require('./DB_connection');
 //const PORT = 3001;
 //const characters = require("./utils/data.js")
 const getCharById =require('./controllers/getCharById.js');
-
-
-// const server = http.createServer((req, res) => {
-//     res.setHeader('Access-Control-Allow-Origin', '*'); //para permitiracceso al servidor que cualquiera pueda hacer servidor "problemas de cords"
-    
-//     if (req.url === "/"){
-//         res.writeHead(200, { 'Content-Type':'text/plain' }) //Le ponemos el status code y algunos pair-values en el header
-// 	    res.end('Servidor rick and morty!\n');
-//     }
-    
-//     if (req.url.includes("/rickandmorty/character")) {
-//          const id = Number(req.url.split("/").pop());//segmento la url por "/" y con el pop saco el ultimo elemento, LUEGO LO TRANSFORMO A NUMBER
-//         getCharById(res, id);
-
-//     }
-    
-// }).listen(PORT, "localhost");
 
 const express = require('express');
 const server = express();
