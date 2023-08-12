@@ -9,7 +9,7 @@ const UserModel = require('./models/User');
 
 // URL ----> postgres://DB_USER:DB_PASSWORD@DB_HOST/rickandmorty
 const sequelize = new Sequelize(
-   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${BDD}`,
+   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/rickandmorty`,
    { logging: false, native: false }
 );
 
@@ -26,8 +26,8 @@ UserModel(sequelize);
 // ¡Relaciona tus modelos aquí abajo!
 const {User, Favorite} = sequelize.models;
 
-User.belongsToMany( Favorite, { through: 'id'});
-Favorite.belongsToMany( User, { through: 'id'});
+User.belongsToMany( Favorite, { through: 'user_favorite'});
+Favorite.belongsToMany( User, { through: 'user_favorite'});
 
 module.exports = {
    User,

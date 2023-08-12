@@ -30,7 +30,9 @@ server.use(express.json());
 
 server.use('/rickandmorty',router);
         
-server.listen(PORT, () => {
+
+
+server.listen(PORT, async () => {
+    await conn.sync( {force : false});
     console.log('Server raised in port: ' + PORT);
 });
-        

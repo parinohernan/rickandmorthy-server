@@ -4,8 +4,9 @@ module.exports = (sequelize) => {
    sequelize.define('User', {
       id: {
          type: DataTypes.INTEGER, 
-         primaryKey:true,
+         primaryKey: true,
          allowNull: false,
+         autoIncrement: true,
       },
       email: {
          type: DataTypes.STRING, 
